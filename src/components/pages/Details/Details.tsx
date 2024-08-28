@@ -13,7 +13,7 @@ import { toast } from 'react-toastify'
 export const Details = () => {
   const { name } = useParams()
   const [loading, setLoading] = useState(false)
-  const [country, setCountry] = useState<Country | undefined>(undefined)
+  const [country, setCountry] = useState<Country>()
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -63,7 +63,7 @@ export const Details = () => {
         </div>
         <div className={styles.grid}>
           <div className={styles.countryContainer}>
-            <h2 className={styles.title}>{country?.name.common}</h2>
+            <h2 className={styles.title}>{country?.name?.common}</h2>
             <div className={styles.countryInfoContainer}>
               <div>
                 <p className={styles.countryDetail}>
